@@ -7,7 +7,7 @@
     "patch": 0
   },
   "keywords": [
-    "uniswap",
+    "marx dex",
     "default",
     "list"
   ],
@@ -864,6 +864,20 @@
       "chainId": 42,
       "name": "Maker",
       "symbol": "MKR",
+      "decimals": 18
+    },
+    {
+      "address": "0x7001244E396aF9F3D861be871a33476E30A7B2E2",
+      "chainId": 9000,
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18
+    },
+    {
+      "address": "0xbEeed8A8Ac97c4C3F698d0f41baC8D5ccF49cC43",
+      "chainId": 9000,
+      "name": "MarX Token",
+      "symbol": "MARX",
       "decimals": 18
     }
   ]

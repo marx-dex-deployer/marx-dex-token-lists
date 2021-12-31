@@ -1,6 +1,6 @@
 {
-  "name": "@uniswap/token-lists",
-  "author": "Moody Salem",
+  "name": "@marx-dex/marx-dex-token-lists",
+  "description": "📚 The Token Lists specification",
   "version": "1.0.0-beta.16",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
     "node": ">=10"
   },
   "repository": {
-    "url": "https://github.com/Uniswap/token-lists",
+    "url": "https://github.com/marx-dex-deployer/marx-dex-token-lists",
     "type": "git"
   },
   "scripts": {

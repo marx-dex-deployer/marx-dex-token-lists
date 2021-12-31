@@ -1,32 +1,48 @@
-# @uniswap/token-lists (beta)
+# @marx-dex/marx-dex-token-lists (beta)
 
-[![Tests](https://github.com/Uniswap/token-lists/workflows/Tests/badge.svg)](https://github.com/Uniswap/token-lists/actions?query=workflow%3ATests)
-[![npm](https://img.shields.io/npm/v/@uniswap/token-lists)](https://unpkg.com/@uniswap/token-lists@latest/)
+[![Tests](https://github.com/marx-dex-deployer/marx-dex-token-lists/workflows/Tests/badge.svg)](https://github.com/marx-dex-deployer/marx-dex-token-lists/actions?query=workflow%3ATests)
+[![npm](https://img.shields.io/npm/v/@marx-dex/marx-dex-token-lists)](https://unpkg.com/@marx-dex/marx-dex-token-lists@latest/)
 
 This package includes a JSON schema for token lists, and TypeScript utilities for working with token lists.
 
-The JSON schema represents the technical specification for a token list which can be used in a dApp interface, such as the Uniswap Interface.
+The JSON schema represents the technical specification for a token list which can be used in a dApp interface, such as the MarX DEX Interface.
 
 ## What are token lists?
 
-Uniswap Token Lists is a specification for lists of token metadata (e.g. address, decimals, ...) that can be used by any dApp interfaces that needs one or more lists of tokens.
+MarX DEX Token Lists is a specification for lists of token metadata (e.g. address, decimals, ...) that can be used by any dApp interfaces that needs one or more lists of tokens.
 
 Anyone can create and maintain a token list, as long as they follow the specification.
 
 Specifically an instance of a token list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of 
 [ERC20](https://github.com/ethereum/eips/issues/20) token metadata for use in dApp user interfaces.
-Token list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the Uniswap Interface.
+Token list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the MarX DEX Interface.
 Tokens on token lists, and token lists themselves, are tagged so that users can easily find tokens.
 
 ## JSON Schema $id
 
-The JSON schema ID is [https://uniswap.org/tokenlist.schema.json](https://uniswap.org/tokenlist.schema.json)
+The JSON schema ID is [https://gameland.cc/tokenlist.schema.json](https://gameland.cc/tokenlist.schema.json)
 
 ## Validating token lists
 
 This package does not include code for token list validation. You can easily do this by including a library such as 
 [ajv](https://ajv.js.org/) to perform the validation against the JSON schema. The schema is exported from the package
 for ease of use.
+
+```typescript
+import Ajv from 'ajv';
+import { schema } from '@marx-dex/marx-dex-token-lists'
+
+const ajv = new Ajv({ allErrors: true });
+const validate = ajv.compile(schema);
+
+const response = await fetch('https://bridge.arbitrum.io/token-list-42161.json')
+const listData = await response.json()
+
+const valid = validate(listData)
+if (!valid) {
+  // oh no!
+}
+```
 
 ## Authoring token lists
 
@@ -51,7 +67,7 @@ npm package to take advantage of the JSON schema for validation and the TypeScri
 Otherwise, you are simply working with JSON. All the usual tools apply, e.g.:
 
 ```typescript
-import { TokenList, schema } from '@uniswap/token-lists'
+import { TokenList, schema } from '@marx-dex/marx-dex-token-lists'
 
 // generate your token list however you like.
 const myList: TokenList = generateMyTokenList();
@@ -96,4 +112,4 @@ This is the preferred way of referencing your list.
 
 You can find a simple example of a token list in [test/schema/example.tokenlist.json](test/schema/example.tokenlist.json).
 
-A snapshot of the Uniswap default list encoded as a token list is found in [test/schema/bigexample.tokenlist.json](test/schema/bigexample.tokenlist.json).
+A snapshot of the MarX DEX default list encoded as a token list is found in [test/schema/bigexample.tokenlist.json](test/schema/bigexample.tokenlist.json).
