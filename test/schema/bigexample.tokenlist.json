@@ -867,17 +867,31 @@
       "decimals": 18
     },
     {
-      "address": "0x7001244E396aF9F3D861be871a33476E30A7B2E2",
+      "address": "0x2a55419038102d9B671f031A7B4Fc99F1582d771",
       "chainId": 9000,
       "name": "Wrapped Ether",
       "symbol": "WETH",
       "decimals": 18
     },
     {
-      "address": "0xbEeed8A8Ac97c4C3F698d0f41baC8D5ccF49cC43",
+      "address": "0xD05958358Cf3F211E5419C6Df2B95d44FFE712bD",
       "chainId": 9000,
       "name": "MarX Token",
       "symbol": "MARX",
+      "decimals": 18
+    },
+    {
+      "address": "0xdcB434b0C8c8c7C6b6b61990B2A87C2c3B1B1F83",
+      "chainId": 9000,
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6
+    },
+    {
+      "address": "0x60154b6844ED3B8CbD4636244bdE43Bb06a0e68D",
+      "chainId": 9000,
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
       "decimals": 18
     }
   ]
