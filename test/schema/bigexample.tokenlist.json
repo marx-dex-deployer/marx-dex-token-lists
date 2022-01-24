@@ -869,8 +869,8 @@
     {
       "address": "0x2a55419038102d9B671f031A7B4Fc99F1582d771",
       "chainId": 9000,
-      "name": "Wrapped Ether",
-      "symbol": "WETH",
+      "name": "Wrapped Evmos",
+      "symbol": "WEVMOS",
       "decimals": 18
     },
     {
